@@ -1,27 +1,135 @@
-# TempApp
+# Angular 16 NgModule Docker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Modern Angular 16 learning project using the traditional NgModule architecture with Docker-based development setup.
 
-## Development server
+## Project Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This repository demonstrates:
 
-## Code scaffolding
+* Angular 16 application setup
+* Traditional NgModule-based architecture
+* Angular Routing
+* SCSS styling
+* Dockerized development environment
+* Git-based development workflow
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech Stack
 
-## Build
+* Angular 16.2.x
+* TypeScript
+* SCSS
+* Node.js 18 LTS
+* Docker
+* Angular CLI 16
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Progress
 
-## Running unit tests
+### Completed
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* [x] Created Git repository
+* [x] Initialized Angular 16 application
+* [x] Enabled Angular Routing
+* [x] Configured SCSS styling
+* [x] Moved Angular project to repository root
+* [x] Installed Angular CLI 16 in Docker
+* [x] Installed Node.js 18 in Docker
+* [x] Created Docker development environment
+* [x] Added Dockerfile
+* [x] Added .dockerignore
+* [x] Verified Angular application builds successfully
 
-## Running end-to-end tests
+### In Progress
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* [ ] Configure Angular development server through Docker
+* [ ] Create Core Module
+* [ ] Create Shared Module
+* [ ] Create Feature Modules
+* [ ] Implement Lazy Loading
+* [ ] Add Product Feature
+* [ ] Add Unit Tests
+* [ ] Docker Compose Setup
 
-## Further help
+## Getting Started
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Prerequisites
+
+* Docker Desktop
+* Git
+
+### Clone Repository
+
+```bash
+git clone https://github.com/sigmakumarwadbude/angular16-ngmodule-docker.git
+cd angular16-ngmodule-docker
+```
+
+## Local Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start Angular development server:
+
+```bash
+ng serve
+```
+
+Navigate to:
+
+```text
+http://localhost:4200
+```
+
+## Docker Development
+
+Build image:
+
+```bash
+docker build -t angular16-dev .
+```
+
+Run container:
+
+```bash
+docker run --rm -it -p 4200:4200 angular16-dev
+```
+
+## Project Structure
+
+```text
+src/
+├── app/
+│   ├── app.module.ts
+│   ├── app-routing.module.ts
+│   └── app.component.*
+│
+├── assets/
+├── styles.scss
+└── main.ts
+```
+
+## Learning Goals
+
+This repository is intended to explore:
+
+* Angular 16 fundamentals
+* NgModule architecture
+* Routing and navigation
+* Dependency Injection
+* Services and HTTP Client
+* RxJS
+* Lazy Loaded Feature Modules
+* Dockerized Angular development
+
+## Next Milestone
+
+Create the first feature module:
+
+```bash
+ng generate module features/products --routing
+```
+
+and implement Product List and Product Details pages using Angular 16 NgModules.
