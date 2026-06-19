@@ -9,4 +9,7 @@ export class ProductService {
   getProducts(): IProduct[] {
     return PRODUCTS;
   }
+  getProduct(id: number): IProduct | undefined {
+    return PRODUCTS.find((product) => product.productId === id);
+  }
 }

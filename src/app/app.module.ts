@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './features/home/welcome.component';
 import { ProductListComponent } from './features/products/product-list/product-list.component';
 import { CommonModule } from '@angular/common';
+import { ProductDetailComponent } from './features/products/product-detail/product-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent, ProductListComponent],
+  declarations: [AppComponent, WelcomeComponent, ProductListComponent, ProductDetailComponent],
   imports: [BrowserModule, CommonModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
