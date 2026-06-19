@@ -17,7 +17,7 @@ This repository demonstrates:
 
 * Angular 16.2.x
 * TypeScript
-* SCSS
+* SCSS & Tailwind CSS
 * Node.js 18 LTS
 * Docker
 * Angular CLI 16
@@ -30,24 +30,24 @@ This repository demonstrates:
 * [x] Initialized Angular 16 application
 * [x] Enabled Angular Routing
 * [x] Configured SCSS styling
+* [x] Configured Tailwind CSS
 * [x] Moved Angular project to repository root
 * [x] Installed Angular CLI 16 in Docker
 * [x] Installed Node.js 18 in Docker
 * [x] Created Docker development environment
-* [x] Added Dockerfile
-* [x] Added .dockerignore
-* [x] Verified Angular application builds successfully
+* [x] Added Dockerfile & .dockerignore
+* [x] Configured Angular development server through Docker
+* [x] Added Product List Component ([Milestone 1](src/docs/milestones/milestone-01-product-list.md))
+* [x] Added Product Service Integration ([Milestone 2](src/docs/milestones/milestone-02-product-service.md))
+* [x] Added initial unit tests for core features
 
-### In Progress
+### Upcoming Milestones
 
-* [ ] Configure Angular development server through Docker
-* [ ] Create Core Module
-* [ ] Create Shared Module
-* [ ] Create Feature Modules
-* [ ] Implement Lazy Loading
-* [ ] Add Product Feature
-* [ ] Add Unit Tests
-* [ ] Docker Compose Setup
+* [ ] Milestone 3 - Product Detail Component (Routing & Parameters)
+* [ ] Milestone 4 - Product Filter & Search (Reactive search filter logic)
+* [ ] Milestone 5 - Star Rating UI Component (Nested component communication)
+* [ ] Milestone 6 - HTTP Client Integration (Connecting to real REST endpoints)
+* [ ] Milestone 7 - Lazy Loaded Product Module (Routing architecture optimization)
 
 ## Getting Started
 
@@ -129,9 +129,22 @@ docker stop $(docker ps -q)
 src/
 ├── app/
 │   ├── features/
-│   │   └── home/
-│   │       ├── welcome.component.ts
-│   │       └── welcome.component.spec.ts
+│   │   ├── home/
+│   │   │   ├── welcome.component.ts
+│   │   │   └── welcome.component.spec.ts
+│   │   │
+│   │   └── products/
+│   │       ├── product-list/
+│   │       │   ├── product-list.component.ts
+│   │       │   ├── product-list.component.html
+│   │       │   └── product-list.component.spec.ts
+│   │       ├── services/
+│   │       │   ├── product.service.ts
+│   │       │   └── product.service.spec.ts
+│   │       ├── models/
+│   │       │   └── product.ts
+│   │       └── data/
+│   │           └── products.ts
 │   │
 │   ├── app.module.ts
 │   ├── app-routing.module.ts
@@ -160,10 +173,6 @@ This repository is intended to explore:
 
 ## Next Milestone
 
-Create the first feature module:
+### Milestone 3: Product Detail Component
 
-```bash
-ng generate module features/products --routing
-```
-
-and implement Product List and Product Details pages using Angular 16 NgModules.
+Implement the product detail component, route configuration with route parameters (e.g. `/products/:id`), dynamic lookup from `ProductService`, and navigation between the list and detail views.
