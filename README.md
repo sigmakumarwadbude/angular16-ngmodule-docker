@@ -97,18 +97,52 @@ Run container:
 docker run --rm -it -p 4200:4200 angular16-dev
 ```
 
+Application URL:
+
+```text
+http://localhost:4200
+```
+
+### Stop the Container
+
+If `Ctrl + C` does not stop the Angular development server properly, first find the running container:
+
+```bash
+docker ps
+```
+
+Stop the container using its CONTAINER ID:
+
+```bash
+docker stop <container-id>
+```
+
+Or stop all running containers:
+
+```bash
+docker stop $(docker ps -q)
+```
+
 ## Project Structure
 
 ```text
 src/
 ├── app/
+│   ├── features/
+│   │   └── home/
+│   │       ├── welcome.component.ts
+│   │       └── welcome.component.spec.ts
+│   │
 │   ├── app.module.ts
 │   ├── app-routing.module.ts
-│   └── app.component.*
+│   ├── app.component.ts
+│   └── app.component.spec.ts
 │
 ├── assets/
-├── styles.scss
-└── main.ts
+├── favicon.ico
+├── index.html
+├── main.ts
+└── styles.scss
 ```
 
 ## Learning Goals
