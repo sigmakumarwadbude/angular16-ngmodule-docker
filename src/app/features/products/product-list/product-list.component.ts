@@ -9,7 +9,7 @@ import { ProductService } from '../services/product.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductListComponent implements OnInit {
-  readonly pageTitle = 'Product List';
+  pageTitle = 'Product List';
   imageWidth = 50;
   imageMargin = 2;
   protected products: IProduct[] = [];
@@ -22,5 +22,9 @@ export class ProductListComponent implements OnInit {
 
   trackByProductId(index: number, product: IProduct): number {
     return product.productId;
+  }
+
+  onRatingClicked(message: string): void {
+    this.pageTitle = 'Product List: ' + message;
   }
 }
