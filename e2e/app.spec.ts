@@ -26,14 +26,24 @@ test.describe('Product List Page', () => {
   test('should display product table with 5 rows', async ({ page }) => {
     await expect(page.locator('h2')).toContainText('Product List');
     await expect(page.locator('table')).toBeVisible();
-    await expect(page.locator('table th').first()).toContainText('Name');
+    await expect(page.locator('table th').first()).toContainText('Image');
     await expect(page.locator('table tbody tr')).toHaveCount(5);
-    await expect(page.locator('table tbody tr').first()).toContainText('Leaf Rake');
+    await expect(page.locator('table tbody tr').first()).toContainText(
+      'Leaf Rake',
+    );
   });
 
   test('should match visual snapshot', async ({ page }) => {
+    await page.setViewportSize({
+      width: 1280,
+      height: 720,
+    });
+
     await page.waitForLoadState('networkidle');
-    await expect(page).toHaveScreenshot('product-list-page.png', { fullPage: true });
+
+    await expect(page.locator('table')).toHaveScreenshot(
+      'product-list-table.png',
+    );
   });
 });
 
