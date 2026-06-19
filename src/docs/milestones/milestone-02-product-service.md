@@ -280,23 +280,23 @@ feat(products): add product service and dependency injection
 ✅ Milestone 0 - Angular 16 + Docker + Tailwind Setup
 ✅ Milestone 1 - Product List
 ✅ Milestone 2 - Product Service
-⬜ Milestone 3 - Product Detail
-⬜ Milestone 4 - Product Filter
-⬜ Milestone 5 - Star Component
-⬜ Milestone 6 - HTTP Client Integration
-⬜ Milestone 7 - Lazy Loaded Product Module
+⬜ Milestone 3 - Setup Unit and E2E Tests using Vite and Playwright
+⬜ Milestone 4 - Product Detail
+⬜ Milestone 5 - Product Filter
+⬜ Milestone 6 - Star Component
+⬜ Milestone 7 - HTTP Client Integration
+⬜ Milestone 8 - Lazy Loaded Product Module
 ```
 
 ---
 
 ## Next Milestone
 
-### Milestone 3: Product Detail
+### Milestone 3: Setup Unit and E2E Tests using Vite and Playwright
 
 Upcoming topics:
 
-* Product Detail Component
-* Route Parameters
-* Router Navigation
-* Product Lookup by Id
-* Master-Detail Pattern
+* Vitest configuration for Angular
+* Playwright E2E configuration and browsers setup
+* Writing unit tests with Vitest
+* Writing end-to-end user flow tests with Playwright

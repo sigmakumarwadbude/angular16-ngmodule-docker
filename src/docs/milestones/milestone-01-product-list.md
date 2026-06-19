@@ -166,13 +166,20 @@ Product Service
 
 ### Milestone 3
 
+Setup Unit and E2E Tests using Vite and Playwright
+
+* Configure Vitest for fast unit testing
+* Configure Playwright for reliable end-to-end testing
+
+### Milestone 4
+
 Product Details
 
 * Product detail page
 * Route parameters
 * Navigation between pages
 
-### Milestone 4
+### Milestone 5
 
 Filtering and Search
 
@@ -180,7 +187,7 @@ Filtering and Search
 * Dynamic filtering
 * Reactive updates
 
-### Milestone 5
+### Milestone 6
 
 HTTP Integration
 
