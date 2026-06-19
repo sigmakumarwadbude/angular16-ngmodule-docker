@@ -1,0 +1,36 @@
+<div class="p-6">
+    <h2 class="text-2xl font-bold mb-4">
+        {{pageTitle}}
+    </h2>
+
+    <table class="min-w-full border">
+        <thead>
+            <tr>
+                <th class="border p-2">Name</th>
+                <th class="border p-2">Code</th>
+                <th class="border p-2">Available</th>
+                <th class="border p-2">Price</th>
+                <th class="border p-2">5 Star Rating</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let product of products; trackBy: trackByProductId">
+                <td class="border p-2">
+                    {{ product.productName }}
+                </td>
+
+                <td class="border p-2">
+                    {{ product.productCode }}
+                </td>
+                <td class="border p-2">
+                    {{ product.releaseDate }}
+                </td>
+                <td class="border p-2">
+                    {{ product.price | currency }}
+                </td>
+                <td class="border p-2"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
