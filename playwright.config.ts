@@ -10,6 +10,14 @@ export default defineConfig({
   use: {
     baseURL: 'http://localhost:4200',
     trace: 'on-first-retry',
+    viewport: { width: 1280, height: 720 },
+    screenshot: 'only-on-failure',
+  },
+  expect: {
+    toHaveScreenshot: {
+      maxDiffPixelRatio: 0.02,
+      animations: 'disabled',
+    },
   },
   projects: [
     {
