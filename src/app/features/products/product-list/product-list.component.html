@@ -18,11 +18,10 @@
         <tbody>
             <tr *ngFor="let product of products; trackBy: trackByProductId">
                 <td class="border p-2">
-                  <img
-                   [src]='product.imageUrl'
-                   [title]='product.productName'
-                   [style.width.px]='imageWidth'
-                   [style.margin.px]='imageMargin'>
+                    <div class="flex justify-center items-center">
+                        <img [src]="product.imageUrl" [title]="product.productName" [style.width.px]="imageWidth"
+                            [style.margin.px]="imageMargin" />
+                    </div>
                 </td>
                 <td class="border p-2">
                     <a [routerLink]="['/products', product.productId]"> {{ product.productName }} </a>
@@ -37,7 +36,11 @@
                 <td class="border p-2">
                     {{ product.price | currency }}
                 </td>
-                <td class="border p-2"></td>
+                <td class="border p-2 items-center">
+                    <div class="flex justify-center items-center">
+                        <app-star [rating]="product.starRating" (ratingClicked)="onRatingClicked($event)"></app-star>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>
