@@ -10,6 +10,8 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductListComponent implements OnInit {
   readonly pageTitle = 'Product List';
+  imageWidth = 50;
+  imageMargin = 2;
   protected products: IProduct[] = [];
 
   constructor(private productService: ProductService) {}

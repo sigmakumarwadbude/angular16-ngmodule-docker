@@ -6,6 +6,7 @@
     <table class="min-w-full border">
         <thead>
             <tr>
+                <th class="border p-2">Image</th>
                 <th class="border p-2">Name</th>
                 <th class="border p-2">Code</th>
                 <th class="border p-2">Available</th>
@@ -17,7 +18,14 @@
         <tbody>
             <tr *ngFor="let product of products; trackBy: trackByProductId">
                 <td class="border p-2">
-                    {{ product.productName }}
+                  <img
+                   [src]='product.imageUrl'
+                   [title]='product.productName'
+                   [style.width.px]='imageWidth'
+                   [style.margin.px]='imageMargin'>
+                </td>
+                <td class="border p-2">
+                    <a [routerLink]="['/products', product.productId]"> {{ product.productName }} </a>
                 </td>
 
                 <td class="border p-2">

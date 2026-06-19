@@ -1,0 +1,78 @@
+<div class="mx-auto max-w-5xl overflow-hidden rounded-lg bg-white shadow-md">
+  <!-- Header -->
+  <div class="border-b bg-gray-50 px-6 py-4">
+    <h2 class="text-xl font-semibold text-gray-800">
+      {{ pageTitle }}: {{ product?.productName }}
+    </h2>
+  </div>
+
+  <!-- Body -->
+  <div *ngIf="product" class="p-6">
+    <div class="grid gap-8 md:grid-cols-3">
+      <!-- Product Details -->
+      <div class="space-y-4 md:col-span-2">
+        <div class="grid grid-cols-3 gap-4">
+          <span class="font-medium text-gray-600">Name:</span>
+          <span class="col-span-2 text-gray-900">
+            {{ product.productName }}
+          </span>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4">
+          <span class="font-medium text-gray-600">Code:</span>
+          <span class="col-span-2 text-gray-900">
+            {{ product.productCode | lowercase }}
+          </span>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4">
+          <span class="font-medium text-gray-600">Description:</span>
+          <span class="col-span-2 text-gray-900">
+            {{ product.description }}
+          </span>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4">
+          <span class="font-medium text-gray-600">Availability:</span>
+          <span class="col-span-2 text-gray-900">
+            {{ product.releaseDate }}
+          </span>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4">
+          <span class="font-medium text-gray-600">Price:</span>
+          <span class="col-span-2 text-gray-900">
+            {{ product.price | currency:'USD':'symbol' }}
+          </span>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 items-center">
+          <span class="font-medium text-gray-600">5 Star Rating:</span>
+          <div class="col-span-2">
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Image -->
+      <div class="flex justify-center md:justify-end">
+        <img
+          class="w-52 rounded-lg border border-gray-200 shadow-sm"
+          [src]="product.imageUrl"
+          [title]="product.productName"
+          [alt]="product.productName"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="border-t bg-gray-50 px-6 py-4">
+    <button
+      type="button"
+      (click)="onBack()"
+      class="inline-flex items-center gap-2 rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100"
+    >
+      ← Back
+    </button>
+  </div>
+</div>
