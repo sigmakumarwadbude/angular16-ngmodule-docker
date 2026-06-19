@@ -40,10 +40,10 @@ This repository demonstrates:
 * [x] Added Product List Component ([Milestone 1](src/docs/milestones/milestone-01-product-list.md))
 * [x] Added Product Service Integration ([Milestone 2](src/docs/milestones/milestone-02-product-service.md))
 * [x] Added initial unit tests for core features
+* [x] Setup Unit and E2E Tests using Vite and Playwright ([Milestone 3](src/docs/milestones/milestone-03-testing-setup.md))
 
 ### Upcoming Milestones
 
-* [ ] Milestone 3 - Setup Unit and E2E Tests using Vite and Playwright
 * [ ] Milestone 4 - Product Detail Component (Routing & Parameters)
 * [ ] Milestone 5 - Product Filter & Search (Reactive search filter logic)
 * [ ] Milestone 6 - Star Rating UI Component (Nested component communication)
@@ -174,6 +174,6 @@ This repository is intended to explore:
 
 ## Next Milestone
 
-### Milestone 3: Setup Unit and E2E Tests using Vite and Playwright
+### Milestone 4: Product Detail Component
 
-Configure Vitest for running fast unit tests and Playwright for reliable end-to-end testing of the Angular application.
+Implement the product detail component, route configuration with route parameters (e.g. `/products/:id`), dynamic product lookup from `ProductService`, and master-detail navigation between the list and detail views.
