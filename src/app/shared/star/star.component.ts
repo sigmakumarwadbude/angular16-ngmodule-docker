@@ -8,6 +8,7 @@ import {
 
 @Component({
   selector: 'app-star',
+  standalone:false,
   template: `
     <div
       class="crop"
