@@ -1,6 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { IProduct } from '../models/product';
-import { PRODUCTS } from '../data/products';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -12,12 +16,20 @@ export class ProductListComponent implements OnInit {
   pageTitle = 'Product List';
   imageWidth = 50;
   imageMargin = 2;
-  protected products: IProduct[] = [];
+  products: IProduct[] = [];
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private cdr: ChangeDetectorRef,
+  ) {}
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
+    this.productService.getProducts().subscribe({
+      next: (products) => {
+        this.products = products;
+        this.cdr.markForCheck();
+      },
+    });
   }
 
   trackByProductId(index: number, product: IProduct): number {

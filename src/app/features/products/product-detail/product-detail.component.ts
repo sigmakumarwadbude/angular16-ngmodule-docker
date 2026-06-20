@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { IProduct } from '../models/product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
@@ -6,6 +6,7 @@ import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductDetailComponent {
   pageTitle = 'Product Detail';
@@ -14,10 +15,16 @@ export class ProductDetailComponent {
     private route: ActivatedRoute,
     private router: Router,
     private productService: ProductService,
+    private cdr: ChangeDetectorRef,
   ) {}
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.product = this.productService.getProduct(id);
+    this.productService.getProduct(id).subscribe({
+      next: (product) => {
+        this.product = product;
+        this.cdr.markForCheck();
+      },
+    });
   }
   onBack(): void {
     this.router.navigate(['/products']);
